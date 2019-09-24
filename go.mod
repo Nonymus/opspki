@@ -1,4 +1,4 @@
-module opskpi
+module toldyouso
 
 go 1.13
 
