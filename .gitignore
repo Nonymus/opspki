@@ -89,3 +89,5 @@ fabric.properties
 # Whatever this is
 .idea/**/$CACHE_FILE$
 
+# Artifacts
+build/
