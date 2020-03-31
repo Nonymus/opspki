@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: opspki
-  tag: {}
+  tag: ""
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
