@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: opspki
+build:
+  artifacts:
+    - image: opspki
+      context: ./docker
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+      - name: opspki
+        chartPath: ./helm/opspki
+        values:
+          image: opspki
+        imageStrategy:
+          helm: {}
