@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -24,6 +25,7 @@ func main() {
 
 	http.Handle("/metrics", promhttp.Handler())
 	http.HandleFunc("/toldyouso", ToldYouSoHandler)
+	http.HandleFunc("/health", HealthHandler)
 
 	log.Printf("Starting webserver on \"%s\"", *listenAddress)
 	log.Fatal(http.ListenAndServe(*listenAddress, nil))
@@ -35,4 +37,8 @@ func ToldYouSoHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		toldYouSo.Inc()
 	}
+}
+
+func HealthHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "OK")
 }
