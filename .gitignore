@@ -92,3 +92,4 @@ fabric.properties
 # Artifacts
 build/
 vendor/
+docker/opspki

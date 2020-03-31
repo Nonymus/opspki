@@ -1,4 +1,5 @@
 ARCH ?= linux
+VERSION ?= 0.0.1
 
 all: build
 
@@ -17,6 +18,6 @@ mrproper: clean
 docker: build
 	cp -v build/opspki docker/
 	cd docker && \
-	docker build -t opspki .
+	docker build -t opspki:$(VERSION) .
 
 .PHONY: all build clean docker
