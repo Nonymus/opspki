@@ -17,4 +17,4 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Build
-      run: go build -v .
+      run: CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' -v .
