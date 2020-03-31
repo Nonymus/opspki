@@ -32,7 +32,7 @@ func main() {
 		}
 	})
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "OK")
+		_, _ = fmt.Fprint(w, "OK")
 	})
 
 	log.Printf("Starting webserver on \"%s\"", *listenAddress)
