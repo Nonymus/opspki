@@ -91,3 +91,4 @@ fabric.properties
 
 # Artifacts
 build/
+vendor/

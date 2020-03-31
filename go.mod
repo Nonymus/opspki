@@ -1,5 +1,5 @@
-module toldyouso
+module opskpi
 
-go 1.13
+go 1.14
 
 require github.com/prometheus/client_golang v1.1.0
